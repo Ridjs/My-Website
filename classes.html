@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="class_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>My Website/Classes</title>
+    </head>
+    <body>
+        <nav id="navigationBar">
+            <div class="navLink"><a href="info.html"><i class="fa fa-user-secret"></i> INFO</a></div>
+            <div class="navLink"><a href="awards.html"><i class="fa fa-trophy"></i> AWARDS</a></div>
+            <div class="linkActive"><a href="#"><i class="fa fa-graduation-cap"></i> CLASSES</a></div>
+            <div class="navLink"><a href="projects.html"><i class="fa fa-briefcase"></i> PROJECTS</a></div>
+        </nav>
+        <div id="header">
+            <div id="headerContainer">
+                <span style="--i:1">C</span>
+                <span style="--i:2">L</span>
+                <span style="--i:3">A</span>
+                <span style="--i:4">S</span>
+                <span style="--i:5">S</span>
+                <span style="--i:6">E</span>
+                <span style="--i:7">S</span>
+            </div>
+        </div>
+        <div id="apClass">
+            <button type="button" class="collapse">AP CLASSES</button>
+            <div class="classContainer">
+                <ul>
+                    <span style="--i:1"><li> AP COMPUTER SCIENCE A </li></span>
+                    <span style="--i:2"><li> AP LANGUAGE COMPOSITION </li></span>
+                    <span style="--i:3"><li> AP PHYSICS 1 </li></span>    
+                    <span style="--i:4"><li> AP PHYSICS C: MECHANICS </li></span>              
+                    <span style="--i:5"><li> AP PHYSICS C: ELECTRICTY & MAGNETISM </li></span>    
+                    <span style="--i:6"><li> AP CALCULUS BC </li></span>   
+                    <span style="--i:7"><li> AP LITERATURE COMPOSITION </li></span>   
+                    <span style="--i:8"><li> AP PSYCHOLOGY </li></span>                                              
+                </ul>
+            </div>
+        </div>
+        <div id="apWeightedClass">
+            <button type="button" class="collapse">AP WEIGHTED CLASSES</button>
+            <div class="classContainer">
+                <ul>
+                    <span style="--i:1"><li> CS TOPICS: MOBILE APPLICATION DEVELOPEMENT </li></span>
+                    <span style="--i:2"><li> CS TOPICS: VIRTUAL REALITY & GAME DESIGN </li></span>
+                    <span style="--i:3"><li> CS ACADEMY: DATA STRUCTURES </li></span>
+                    <span style="--i:4"><li> CS ACADEMY: COMPUTER SCIENCE CAPSTONE </li></span>
+                </ul>
+            </div>
+        </div>
+        <div id="honorsClass">
+            <button type="button" class="collapse">HONORS CLASSES</button>
+            <div class="classContainer">
+                <ul>
+                    <span style="--i:1"><li> HONORS CHEMISTRY 1 </li></span>
+                    <span style="--i:2"><li> HONORS BIOLOGY 1 </li></span>
+                    <span style="--i:3"><li> HONORS PRE-AP CALCULUS </li></span>
+                    <span style="--i:4"><li> HONORS GLOBAL STUDIES </li></span>
+                    <span style="--i:5"><li> HONORS SPANISH III </li></span>
+                    <span style="--i:6"><li> HONORS SPANISH IV </li></span>
+                    <span style="--i:7"><li> HONORS U.S. HISTORY </li></span>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var col = document.getElementsByClassName("collapse");
+            for (var i = 0; i < col.length; i++){
+                col[i].addEventListener("click", function(){
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if(content.style.display === "block"){
+                        content.style.display = "none";
+                    }
+                    else{
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

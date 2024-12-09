@@ -1,0 +1,169 @@
+body{
+    background-color:black;
+}
+
+#onePage{
+    min-height:100vh;
+}
+
+#navigationBar{
+    background-color:black;
+    padding:20px;
+    padding-left:0px;
+    display:flex;
+}
+
+.navLink{
+    width:200px;
+    box-sizing:border-box;
+    padding:20px;
+    text-align:center;
+    border:3px solid white;
+    transition:all .4s ease-in-out;
+}
+
+.navLink a{
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.linkActive{
+    background-color:lightslategray;
+    width:200px;
+    box-sizing:border-box;
+    padding:20px;
+    text-align:center;
+    border:3px solid white;
+}
+
+.linkActive a{
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navLink:hover{
+    background-color:white;
+    border:3px solid lightgray;
+}
+
+.navLink:hover a{
+    color:black;
+}
+
+#header{
+    margin-top:5px;
+    padding-top:100px;
+    padding-bottom:100px;
+    background-color:white;
+    transition:background-color 1s ease-in-out;
+}
+
+#headerContainer{
+    display:flex;
+    justify-content:center;
+    place-items:center;
+}
+
+#header:hover{
+    background-color:black;
+}
+
+#header:hover #headerContainer span{
+    animation:bounce 3s infinite;
+    animation-delay:calc(.3s*var(--i));
+}
+
+@keyframes bounce {
+    0%{
+        transform:translateY(0);
+    }
+    25%{
+        transform:translateY(50px);
+    }
+    75%{
+        transform:translateY(-50px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+#headerContainer span{
+    display:inline-block;
+    font-size:50px;
+    font-family:"Bungee Spice", sans-serif;
+    animation:flip 3s infinite;
+    animation-delay:calc(.3s*var(--i));
+}
+
+@keyframes flip{
+    0%, 80%{
+        transform:rotateY(360deg);
+    }
+}
+
+.collapse{
+    background-color:lightsalmon;
+    color:black;
+    cursor:pointer;
+    padding-top:20px;
+    padding-bottom:20px;
+    width:100%;
+    border:none;
+    text-align:left;
+    outline:none;
+    font-size:20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.active, .collapse:hover{
+    background-color:orangered;
+}
+
+.classContainer{
+    display:none;
+    overflow:hidden;
+    background-color:lightcoral;
+    font-family:"Baloo Paaji 2", sans-serif;
+}
+
+.collapse:after{
+    content:"\02795";
+    font-size:20px;
+    float:right;
+}
+
+.active:after{
+    content:"\2796";
+}
+
+.collapse.active + .classContainer span{
+    opacity:0;
+    animation:show 3s forwards;
+    animation-delay:calc(.3s*var(--i));
+}
+
+@keyframes show{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+#apClass{
+    margin-top:5px;
+}
+
+#apWeightedClass{
+    margin-top:5px;
+}
+
+#honorsClass{
+    margin-top:5px;
+}

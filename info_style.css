@@ -1,0 +1,220 @@
+body{
+    background-color:black;
+}
+
+#onePage{
+    min-height:100vh;
+}
+
+#navigationBar{
+    background-color:black;
+    padding:20px;
+    padding-left:0px;
+    display:flex;
+}
+
+.navLink{
+    width:200px;
+    box-sizing:border-box;
+    padding:20px;
+    text-align:center;
+    border:3px solid white;
+    transition:all .4s ease-in-out;
+}
+
+.navLink a{
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.active{
+    background-color:lightslategray;
+    width:200px;
+    box-sizing:border-box;
+    padding:20px;
+    text-align:center;
+    border:3px solid white;
+}
+
+.active a{
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navLink:hover{
+    background-color:white;
+    border:3px solid lightgray;
+}
+
+.navLink:hover a{
+    color:black;
+}
+
+#header{
+    margin-top:5px;
+    padding-top:100px;
+    padding-bottom:100px;
+    background-color:white;
+    transition:background-color 1s ease-in-out;
+}
+
+#headerContainer{
+    display:flex;
+    justify-content:center;
+    place-items:center;
+}
+
+#header:hover{
+    background-color:black;
+}
+
+#header:hover #headerContainer span{
+    animation:bounce 3s infinite;
+    animation-delay:calc(.3s*var(--i));
+}
+
+@keyframes bounce {
+    0%{
+        transform:translateY(0);
+    }
+    25%{
+        transform:translateY(50px);
+    }
+    75%{
+        transform:translateY(-50px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+#headerContainer span{
+    display:inline-block;
+    font-size:50px;
+    font-family:"Bungee Spice", sans-serif;
+    animation:flip 3s infinite;
+    animation-delay:calc(.3s*var(--i));
+}
+
+@keyframes flip{
+    0%, 80%{
+        transform:rotateY(360deg);
+    }
+}
+
+#info{
+    margin-top:5px;
+    padding:20px;
+    padding-left:0px;
+    display:flex;
+    justify-content:space-between;
+    background-color:black;
+}
+
+#infoContainer{
+    position:relative;
+    float:left;
+    width:84.5%;
+    margin-top:-13%;
+    color:white;
+}
+
+#imageContainer{
+    position:relative;
+    float:right;
+    width:15.5%;
+}
+
+#imageContainer img{
+    border:3px solid white;
+}
+
+#personalInfo{
+    display:flex;
+    font-family:"Baloo Paaji 2", sans-serif;
+    text-align:left;
+    flex-direction:column;
+    justify-content:center;
+    height:100%;
+}
+
+#down{
+    position:absolute;
+    bottom:10px;
+}
+
+#experience{
+    min-height:100vh;
+}
+
+section{
+    display:grid;
+    place-items:center;
+    align-content:center;
+}
+
+.hiddenExperience{
+    opacity:0;
+    background-color:black;
+    color:white;
+    min-height:100vh;
+    font-size:40px;
+    font-family: 'Itim',cursive;
+    text-decoration:underline;
+    filter:blur(5px);
+    transform:translateX(-100%);
+    transition:all 2s;
+}
+
+.showExperience{
+    opacity:1;
+    filter:none;
+    transform:translateX(0);
+}
+
+#grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.showExperience #grid span{
+    opacity:0;
+    animation:slide 2s forwards;
+    animation-delay:calc(0.5s*var(--i));
+}
+
+@keyframes slide{
+    0%{
+        opacity:1;
+        transform:translateX(-100vw);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+#grid img{
+    margin-right:40px;
+    margin-bottom: 40px;
+    border-radius:10px;
+    background-color:lightgray;
+    transform:scale(1);
+    transition:all .5s ease-in-out;
+}
+
+#grid img:hover{
+    transform:scale(1.1);
+    box-shadow:0px 0px 15px whitesmoke;
+}
+
+#grid:hover img:not(:hover){
+    filter:blur(4px);
+}

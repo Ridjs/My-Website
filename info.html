@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="info_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>My Website</title>
+    </head>
+    <body onload="timer()">
+        <div id="onePage">
+            <nav id="navigationBar">
+                <div class="active"><a href="#"><i class="fa fa-user-secret"></i> INFO</a></div>
+                <div class="navLink"><a href="awards.html"><i class="fa fa-trophy"></i> AWARDS</a></div>
+                <div class="navLink"><a href="classes.html"><i class="fa fa-graduation-cap"></i> CLASSES</a></div>
+                <div class="navLink"><a href="projects.html"><i class="fa fa-briefcase"></i> PROJECTS</a></div>
+            </nav>
+            
+            <div id="header">
+                <div id="headerContainer">
+                    <span style="--i:1">M</span>
+                    <span style="--i:2">Y</span>
+                    <span style="--i:3">&nbsp;</span>
+                    <span style="--i:4">W</span>
+                    <span style="--i:5">E</span>
+                    <span style="--i:6">B</span>
+                    <span style="--i:7">S</span>
+                    <span style="--i:8">I</span>
+                    <span style="--i:9">T</span>
+                    <span style="--i:10">E</span>
+                </div>
+            </div>
+
+            <div id="info">
+                <div id="infoContainer">
+                    <p id="personalInfo">Hello, welcome to this website. This website includes a lot of information about me. I am currently a junior at South Brunswick High School. I have a strong interest in STEM-related subjects. In particular, I have a strong passion for Computer Science and would like to major in it in the future. I am working on projects that showcase my knowledge I have in Computer Science.</p>
+                </div>
+                <div id="imageContainer">
+                    <img id="gallery" src="IMG-20220717-WA0014.jpg" alt="Gallery" width="200" height="200">
+                </div>
+            </div>
+            <button id="down" onClick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})"><img src="down.png" width="20" height="20"></button>
+        </div>
+        
+        <div id="experience">
+            <section class="hiddenExperience">
+                <h1>EXPERIENCE</h1>
+                <div id="grid">
+                    <span style="--i:1"><img src="Java-logo.png" alt="Java Logo" title="JAVA" width="200" height="200"></span>
+                    <span style="--i:2"><img src="Html-logo.png" alt="HTML5 Logo" title="HTML5" width="200" height="200"></span>
+                    <span style="--i:3"><img src="Css-logo.png" alt="CSS Logo" title="CSS" width="200" height="200"></span>
+                    <span style="--i:4"><img src="Unity-logo.png" alt="Unity Logo" title="UNITY" width="200" height="200"></span>
+                    <span style="--i:5"><img src="JavaScript-logo.png" alt="Javascript Logo" title="JAVASCRIPT" width="200" height="200"></span>
+                    <span style="--i:6"><img src="AndroidStudio-logo.png" alt="Android Studio Logo" title="ANDROID STUDIO" width="200" height="200"></span>
+                </div>
+            </section>
+        </div>
+
+        <script defer>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add("showExperience");
+                    }
+                    else{
+                        entry.target.classList.remove("showExperience");
+                    }
+                });
+            });
+            const hidden = document.querySelectorAll(".hiddenExperience");
+            hidden.forEach((element) => observer.observe(element));
+            var images = [], x = -1;
+            images[0] = "IMG-20220717-WA0014.jpg";
+            images[1] = "IMG-20221120-WA0035.jpg";
+            images[2] = "IMG-20221230-WA0036.jpg";
+            images[3] = "IMG-20230903-WA1388.jpg";
+            images[4] = "IMG-20230908-WA0099.jpg";
+            images[5] = "IMG-20230925-WA0013.jpg";
+            function displayImage() {
+                x = (x + 1) % images.length;
+                document.getElementById("gallery").src = images[x];
+            }
+            function timer(){
+                setInterval(displayImage, 5000);
+            }
+        </script>
+    </body>
+</html>
